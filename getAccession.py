@@ -1,15 +1,16 @@
 ###############################################################################
 '''
  Program: getAccession.py                                                    
- Rev: 1.0                                                                    
- Date: 8/2/12                                                                
- Author: Steve Essinger, Email: sde22@drexel.edu
+ Rev: 1.1                                                                    
+ Date: 2/3/14                                                                
+ Author: S. Essinger
  Description: Maps unique ID from database to each alignment
-'''                                                                             #                                                               
+'''                                                                                                                                          
 ###############################################################################
 
-inFile = open('MFS_metaData.txt','r')
-outFile = open('ListAccessions.txt','w')
+inFile = raw_input('Enter name of database: ')
+#inFile = open('MFS_metaData.txt','r')
+outFile = open('ListAccessions_temp.txt','w')
 
 for line in inFile:
     if line.startswith('>'):
@@ -24,9 +25,14 @@ for line in inFile:
 inFile.close()
 outFile.close()
 
-inACC = open('ListAccessions.txt','r')
-inALN = open('MFS_Align.fasta','r')
-outALN = open('MFS_UID.fasta','w')
+#inACC = open('ListAccessions.txt','r')
+#inALN = open('MFS_Align.fasta','r')
+#outALN = open('MFS_UID.fasta','w')
+
+inACC = open('ListAccessions_temp.txt','r')
+inALN = open('Enter name of alignment file: ')
+fooALN = open('Enter desired name for Unique IDs file: ')
+outALN = open(fooALN,'w')
 
 UID = []
 ACC = []
